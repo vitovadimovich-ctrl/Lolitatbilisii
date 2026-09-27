@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lolita — რესტორანი და ბარი, თბილისი</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;500;600;700&family=Noto+Sans+Georgian:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: { cream:'#FBF6EC', ink:'#241F19', olive:'#6E7C4A', terracotta:'#C1613B', card:'#F2E9D8', line:'#E4D8BE' },
+        fontFamily: { display:['"Noto Serif Georgian"','serif'], body:['"Noto Sans Georgian"','sans-serif'] },
+        keyframes: {
+          float: { '0%,100%':{transform:'translateY(0) rotate(0deg)'}, '50%':{transform:'translateY(-16px) rotate(3deg)'} },
+          floatB: { '0%,100%':{transform:'translateY(0) rotate(0deg)'}, '50%':{transform:'translateY(14px) rotate(-4deg)'} },
+          marquee: { '0%':{transform:'translateX(0)'}, '100%':{transform:'translateX(-50%)'} },
+        },
+        animation: { float:'float 7s ease-in-out infinite', floatB:'floatB 9s ease-in-out infinite', marquee:'marquee 24s linear infinite' }
+      }
+    }
+  }
+</script>
+<style>
+  html{scroll-behavior:smooth;scroll-padding-top:76px;}
+  :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);}
+  body{font-family:'Noto Sans Georgian',sans-serif;}
+  h1,h2,h3,.font-display{font-family:'Noto Serif Georgian',serif;}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.show{opacity:1;transform:translateY(0);}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+  ::selection{background:#C1613B;color:#FBF6EC;}
+  .mi{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid #E4D8BE;}
+  .cat-block:last-child .mi:last-child{border-bottom:none;}
+  .mi .n{font-weight:500;font-size:.95rem;}
+  .mi .d{font-size:.78rem;color:#9a8d76;margin-top:1px;}
+  .mi .p{white-space:nowrap;color:#C1613B;font-family:'Noto Serif Georgian',serif;font-size:.9rem;padding-left:8px;}
+  .cat-h{font-family:'Noto Serif Georgian',serif;font-size:1.05rem;font-weight:600;margin:20px 0 4px;color:#C1613B;}
+  .cat-block{break-inside:avoid;margin-bottom:6px;}
+  .cat-block:first-child .cat-h{margin-top:0;}
+  .note{font-size:.75rem;color:#9a8d76;margin-top:14px;}
+</style>
+</head>
+<body class="bg-cream text-ink">
+
+<nav class="fixed top-0 inset-x-0 z-30 bg-cream/85 backdrop-blur-md border-b border-line">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <span class="font-display text-2xl font-semibold tracking-tight">Lolita</span>
+    <div class="hidden md:flex gap-8 text-sm text-ink/70">
+      <a href="#about" class="hover:text-terracotta transition">ჩვენ შესახებ</a>
+      <a href="#menu" class="hover:text-terracotta transition">მენიუ</a>
+      <a href="#booking" class="hover:text-terracotta transition">ჯავშანი</a>
+      <a href="#contact" class="hover:text-terracotta transition">კონტაქტი</a>
+    </div>
+    <a href="tel:+995322020299" class="text-sm font-medium bg-ink text-cream px-5 py-2.5 rounded-full hover:bg-terracotta transition">032 202 02 99</a>
+  </div>
+</nav>
+
+<header class="relative overflow-hidden pt-40 pb-24 px-6">
+  <div class="absolute -top-10 right-[6%] w-40 h-40 md:w-64 md:h-64 rounded-full bg-terracotta/20 blur-2xl animate-float"></div>
+  <div class="absolute top-40 left-[4%] w-32 h-32 md:w-52 md:h-52 rounded-full bg-olive/25 blur-2xl animate-floatB"></div>
+  <div class="relative max-w-3xl mx-auto text-center">
+    <span class="inline-block text-xs tracking-[0.2em] uppercase text-olive font-semibold mb-5">რესტორანი და ბარი · თბილისი</span>
+    <h1 class="font-display text-6xl md:text-8xl font-semibold leading-[0.95] mb-6">Lolita</h1>
+    <p class="text-lg text-ink/70 max-w-xl mx-auto mb-8">საუზმე, პასტა, ხაჭაპური და ნატურალური ღვინო თბილისის ტერასაზე — დილიდან ღამის ორ საათამდე, ყოველ დღე.</p>
+    <div class="flex items-center justify-center gap-4 flex-wrap mb-10">
+      <span class="flex items-center gap-1.5 bg-card border border-line rounded-full px-4 py-2 text-sm"><b class="font-display">4,2</b> ★ Google · 201</span>
+      <span class="flex items-center gap-1.5 bg-card border border-line rounded-full px-4 py-2 text-sm"><b class="font-display">9,2</b> Wolt · 500</span>
+    </div>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="#booking" class="bg-terracotta text-cream px-7 py-3.5 rounded-full font-medium hover:scale-105 transition-transform">მაგიდის დაჯავშნა</a>
+      <a href="#menu" class="border border-ink/20 px-7 py-3.5 rounded-full font-medium hover:bg-ink hover:text-cream transition">მენიუს ნახვა</a>
+    </div>
+  </div>
+</header>
+
+<div class="border-y border-line bg-ink text-cream py-3 overflow-hidden whitespace-nowrap">
+  <div class="inline-flex animate-marquee text-sm tracking-wide">
+    <span class="mx-6">ღიაა ახლა · იხურება 02:00-ზე</span><span class="mx-6">•</span>
+    <span class="mx-6">ტერასა · დახურული დარბაზი · კოქტეილები</span><span class="mx-6">•</span>
+    <span class="mx-6">საშუალო ჩეკი 20–70 ₾</span><span class="mx-6">•</span>
+    <span class="mx-6">ღიაა ახლა · იხურება 02:00-ზე</span><span class="mx-6">•</span>
+    <span class="mx-6">ტერასა · დახურული დარბაზი · კოქტეილები</span><span class="mx-6">•</span>
+    <span class="mx-6">საშუალო ჩეკი 20–70 ₾</span><span class="mx-6">•</span>
+  </div>
+</div>
+
+<section id="about" class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-14 items-center">
+  <div class="reveal">
+    <span class="text-xs tracking-[0.2em] uppercase text-olive font-semibold">ჩვენ შესახებ</span>
+    <h2 class="font-display text-4xl md:text-5xl font-semibold mt-3 mb-5 leading-tight">ადგილი, სადაც საუზმე<br>ნელა გადადის ღვინოში</h2>
+    <p class="text-ink/70 mb-6">Lolita — ტერასა და მყუდრო დარბაზია თამარ ჩოველიძის ქუჩაზე, სადაც დილა იწყება მაჩა-ლატეთი და ავოკადოს ტოსტით, დღე — პასტებითა და პიცეტებით, ხოლო საღამო — ნატურალური ღვინითა და კოქტეილებით.</p>
+    <div class="grid grid-cols-2 gap-3 text-sm">
+      <div class="bg-card border border-line rounded-2xl px-4 py-3">🌿 ტერასა</div>
+      <div class="bg-card border border-line rounded-2xl px-4 py-3">🏠 დახურული დარბაზი</div>
+      <div class="bg-card border border-line rounded-2xl px-4 py-3">🍸 კოქტეილების ასორტიმენტი</div>
+      <div class="bg-card border border-line rounded-2xl px-4 py-3">🍷 ნატურალური ღვინოები</div>
+    </div>
+  </div>
+  <div class="reveal grid grid-cols-2 gap-4">
+    <div class="bg-card border border-line rounded-3xl p-6 aspect-[4/5] flex flex-col justify-end animate-float">
+      <span class="font-display text-3xl font-semibold text-terracotta">02:00</span>
+      <span class="text-sm text-ink/60 mt-1">ვმუშაობთ გვიანობამდე</span>
+    </div>
+    <div class="bg-ink text-cream rounded-3xl p-6 aspect-[4/5] flex flex-col justify-end mt-8 animate-floatB">
+      <span class="font-display text-3xl font-semibold">20–70 ₾</span>
+      <span class="text-sm text-cream/60 mt-1">საშუალო ჩეკი ერთ სულზე</span>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="max-w-5xl mx-auto px-6 py-24">
+  <div class="reveal text-center mb-10">
+    <span class="text-xs tracking-[0.2em] uppercase text-olive font-semibold">მენიუ</span>
+    <h2 class="font-display text-4xl md:text-5xl font-semibold mt-3">Lolita-ს სრული მენიუ</h2>
+  </div>
+  <div id="tabs" class="reveal flex gap-2 justify-center flex-wrap mb-10 text-sm">
+    <button data-tab="t1" class="tab-btn px-4 py-2 rounded-full border border-line font-medium transition">სუპი და საჭმელები</button>
+    <button data-tab="t2" class="tab-btn px-4 py-2 rounded-full border border-line font-medium transition">ძირითადი კერძები</button>
+    <button data-tab="t3" class="tab-btn px-4 py-2 rounded-full border border-line font-medium transition">პასტა</button>
+    <button data-tab="t4" class="tab-btn px-4 py-2 rounded-full border border-line font-medium transition">ბურგერი და სენდვიჩი</button>
+    <button data-tab="t5" class="tab-btn px-4 py-2 rounded-full border border-line font-medium transition">პიცეტა</button>
+    <button data-tab="t6" class="tab-btn px-4 py-2 rounded-full border border-line font-medium transition">სალათები</button>
+    <button data-tab="t7" class="tab-btn px-4 py-2 rounded-full border border-line font-medium transition">გარნირი და სოუსი</button>
+    <button data-tab="t8" class="tab-btn px-4 py-2 rounded-full border border-line font-medium transition">დესერტი</button>
+    <button data-tab="t9" class="tab-btn px-4 py-2 rounded-full border border-line font-medium transition">საუზმე 09:00–14:00</button>
+    <button data-tab="t10" class="tab-btn px-4 py-2 rounded-full border border-line font-medium transition">კოქტეილები</button>
+    <button data-tab="t11" class="tab-btn px-4 py-2 rounded-full border border-line font-medium transition">ბარი</button>
+  </div>
+
+  <div class="bg-card border border-line rounded-3xl p-6 md:p-10">
+
+  <div data-panel="t1" class="tab-panel md:columns-2 md:gap-x-12">
+    <div class="cat-block"><div class="cat-h">Appetizer</div>
+      <div class="mi"><div><p class="n">Cheese Sticks</p><p class="d">Sulguni, Panko, Garlic Powder, Egg, Sweet Chili Sauce</p></div><span class="p">22 ₾</span></div>
+      <div class="mi"><div><p class="n">Potato Croquettes</p><p class="d">Cheddar, Sriracha Mayo</p></div><span class="p">13 ₾</span></div>
+      <div class="mi"><div><p class="n">Cauliflower Bites, Kimchi Mayo</p><p class="d">Panko, Onion, Garlic, Egg, Lime</p></div><span class="p">15 ₾</span></div>
+      <div class="mi"><div><p class="n">Chicken Bites</p><p class="d">Panko, Tartar Sauce</p></div><span class="p">20 ₾</span></div>
+      <div class="mi"><div><p class="n">Beef Spring Rolls</p><p class="d">Cheddar, Cabbage, Jalapeño BBQ Sauce</p></div><span class="p">22 ₾</span></div>
+      <div class="mi"><div><p class="n">Tomato & Parmesan Arancini</p><p class="d">Risotto Rice, Basil, Parmesan</p></div><span class="p">14 ₾</span></div>
+      <div class="mi"><div><p class="n">Chicken Wings</p><p class="d">Sweet Chili, Sesame, Green Onion</p></div><span class="p">23 ₾</span></div>
+    </div>
+    <div class="cat-block"><div class="cat-h">Soup</div>
+      <div class="mi"><div><p class="n">Cucumber Soup</p><p class="d">Matsoni, Basil</p></div><span class="p">13 ₾</span></div>
+      <div class="mi"><div><p class="n">Tom Yum</p><p class="d">Shrimp, Rice Noodles, Lemongrass, Coconut Cream</p></div><span class="p">26 ₾</span></div>
+      <div class="mi"><div><p class="n">Tomato Soup</p><p class="d">Red Pepper, Garlic, Cheese Sandwich</p></div><span class="p">21 ₾</span></div>
+      <div class="mi"><div><p class="n">Minestrone</p><p class="d">Pasta Ditalini, Tomato, Carrot, Beans</p></div><span class="p">15 ₾</span></div>
+    </div>
+  </div>
+
+  <div data-panel="t2" class="tab-panel md:columns-2 md:gap-x-12">
+    <div class="cat-block"><div class="cat-h">Large Plate</div>
+      <div class="mi"><div><p class="n">Tofu Bowl</p><p class="d">Rice, Marinated Cucumber & Zucchini, Pickled Ginger</p></div><span class="p">24 ₾</span></div>
+      <div class="mi"><div><p class="n">Chicken Quesadilla</p><p class="d">Cheddar, Tomato Salsa, Jalapeño, Guacamole</p></div><span class="p">32 ₾</span></div>
+      <div class="mi"><div><p class="n">BBQ Pork</p><p class="d">Shallot & Cucumber Pickle, Roast Potatoes</p></div><span class="p">37 ₾</span></div>
+      <div class="mi"><div><p class="n">Roasted Chicken</p><p class="d">Grilled Corn</p></div><span class="p">39 ₾</span></div>
+      <div class="mi"><div><p class="n">Birria Tacos</p><p class="d">Pulled Beef, Tortilla, Mozzarella, Coriander, Chilli</p></div><span class="p">26 ₾</span></div>
+      <div class="mi"><div><p class="n">BBQ Beef Ribs</p><p class="d">BBQ Sauce, Onion Rings, Coleslaw</p></div><span class="p">70 ₾</span></div>
+      <div class="mi"><div><p class="n">Beef Burrito</p><p class="d">Beans, Rice, Avocado, Spicy Sour Cream, Cheddar</p></div><span class="p">32 ₾</span></div>
+      <div class="mi"><div><p class="n">Chicken Schnitzel</p><p class="d">Panko, Blackcurrant Sauce</p></div><span class="p">21 ₾</span></div>
+      <div class="mi"><div><p class="n">Chickpea Curry, Rice</p><p class="d">Coconut Cream, Tomato, Chili</p></div><span class="p">21 ₾</span></div>
+      <div class="mi"><div><p class="n">Labneh, Crispy Chickpeas</p><p class="d">Pickled Onion, Garlic Bread</p></div><span class="p">22 ₾</span></div>
+    </div>
+  </div>
+
+  <div data-panel="t3" class="tab-panel md:columns-2 md:gap-x-12">
+    <div class="cat-block"><div class="cat-h">Pasta</div>
+      <div class="mi"><div><p class="n">Gnocchi</p><p class="d">Crispy Prosciutto, Cream, Parmesan, Black Pepper</p></div><span class="p">25 ₾</span></div>
+      <div class="mi"><div><p class="n">Ricotta & Walnut Tortellini</p><p class="d">Cream, Mushrooms, Spinach</p></div><span class="p">28 ₾</span></div>
+      <div class="mi"><div><p class="n">Truffle Mafaldine</p><p class="d">Parmesan, Black Pepper</p></div><span class="p">37 ₾</span></div>
+      <div class="mi"><div><p class="n">Lemon</p><p class="d">Garlic, Parmesan</p></div><span class="p">21 ₾</span></div>
+      <div class="mi"><div><p class="n">Bolognese Rigatoni</p><p class="d">Beef, Bacon, Tomato, Red Wine</p></div><span class="p">36 ₾</span></div>
+      <div class="mi"><div><p class="n">Mac & Cheese</p><p class="d">Cheddar, Gouda, Parmesan, Panko</p></div><span class="p">26 ₾</span></div>
+      <div class="mi"><div><p class="n">Lemon Risotto</p><p class="d">Parmesan, Curcuma, Shrimp Crackers</p></div><span class="p">20 ₾</span></div>
+      <div class="mi"><div><p class="n">Aglio E Olio, Shrimps</p><p class="d">Garlic, Olive Oil</p></div><span class="p">30 ₾</span></div>
+    </div>
+  </div>
+
+  <div data-panel="t4" class="tab-panel md:columns-2 md:gap-x-12">
+    <div class="cat-block"><div class="cat-h">Burger & Sandwich</div>
+      <div class="mi"><div><p class="n">Tuna Melt</p><p class="d">Cheddar, Sriracha, Lime</p></div><span class="p">20 ₾</span></div>
+      <div class="mi"><div><p class="n">Hot Dog</p><p class="d">Cheddar, Spinach, Dijon Mustard, Fries</p></div><span class="p">22 ₾</span></div>
+      <div class="mi"><div><p class="n">Cheeseburger</p><p class="d">Beef, Pickles, Cocktail Sauce, Fries</p></div><span class="p">35 ₾</span></div>
+      <div class="mi"><div><p class="n">Fish Sandwich</p><p class="d">Tartar Sauce, Coleslaw, Cheddar</p></div><span class="p">26 ₾</span></div>
+      <div class="mi"><div><p class="n">Pita Caesar</p><p class="d">Chicken, Bacon, Parmesan, Fries</p></div><span class="p">32 ₾</span></div>
+      <div class="mi"><div><p class="n">Provence Sandwich, Ham & Cheese</p><p class="d">Turkey Ham, Cheddar</p></div><span class="p">20 ₾</span></div>
+      <div class="mi"><div><p class="n">Ciabatta Sandwich, Ham & Cheese</p><p class="d">Pork Ham, Cheddar</p></div><span class="p">24 ₾</span></div>
+      <div class="mi"><div><p class="n">Vegetarian Burger</p><p class="d">Jalapeño, Cheddar, Vegan Sauce, Fries</p></div><span class="p">32 ₾</span></div>
+      <div class="mi"><div><p class="n">Turkey Pita</p><p class="d">Turkey Ham, Cheese, Truffle Sauce</p></div><span class="p">19 ₾</span></div>
+      <div class="mi"><div><p class="n">Chicken Focaccia Sandwich</p><p class="d">Avocado, Bacon, Spinach, Fries</p></div><span class="p">32 ₾</span></div>
+    </div>
+  </div>
+
+  <div data-panel="t5" class="tab-panel md:columns-2 md:gap-x-12">
+    <div class="cat-block"><div class="cat-h">Pizzette</div>
+      <div class="mi"><div><p class="n">Lolita Khachapuri</p><p class="d">Sulguni, Mozzarella, Imeruli Cheese, Egg, Butter</p></div><span class="p">25 ₾</span></div>
+      <div class="mi"><div><p class="n">Prosciutto</p><p class="d">Mozzarella Mix, Sundried Tomato, Parmesan</p></div><span class="p">25 ₾</span></div>
+      <div class="mi"><div><p class="n">Spicy Salami</p><p class="d">Mozzarella Mix, Tomato Sauce, Chili Flakes</p></div><span class="p">28 ₾</span></div>
+      <div class="mi"><div><p class="n">Mushroom, Cream Cheese</p><p class="d">Mozzarella Mix, Rucola</p></div><span class="p">23 ₾</span></div>
+      <div class="mi"><div><p class="n">Margherita</p><p class="d">Tomato Sauce, Fresh Mozzarella</p></div><span class="p">26 ₾</span></div>
+      <div class="mi"><div><p class="n">Mortadella, Pesto, Stracciatella</p><p class="d"></p></div><span class="p">35 ₾</span></div>
+    </div>
+  </div>
+
+  <div data-panel="t6" class="tab-panel md:columns-2 md:gap-x-12">
+    <div class="cat-block"><div class="cat-h">Salad</div>
+      <div class="mi"><div><p class="n">Shrimp Salad</p><p class="d">Mango, Fregola, Rucola, Spicy Lime Dressing</p></div><span class="p">34 ₾</span></div>
+      <div class="mi"><div><p class="n">Brussels Sprouts, Bacon</p><p class="d">Apple, Almonds, Parmesan, Mustard Dressing</p></div><span class="p">17 ₾</span></div>
+      <div class="mi"><div><p class="n">Grilled Artichoke Salad</p><p class="d">Frisée, Romano, Parmesan, Nuts</p></div><span class="p">22 ₾</span></div>
+      <div class="mi"><div><p class="n">Chicken Salad</p><p class="d">Red Pepper, Rucola, Sesame, Soy Dressing</p></div><span class="p">26 ₾</span></div>
+      <div class="mi"><div><p class="n">Citrus Salad</p><p class="d">Rucola, Spinach, Walnuts, Raisins</p></div><span class="p">20 ₾</span></div>
+      <div class="mi"><div><p class="n">Strawberry Stracciatella Salad</p><p class="d">Rucola, Balsamic Dressing</p></div><span class="p">23 ₾</span></div>
+      <div class="mi"><div><p class="n">Pear & Candied Walnut</p><p class="d">Mizuna, Aged Cheese, Honey Mustard</p></div><span class="p">28 ₾</span></div>
+    </div>
+  </div>
+
+  <div data-panel="t7" class="tab-panel md:columns-2 md:gap-x-12">
+    <div class="cat-block"><div class="cat-h">Sides</div>
+      <div class="mi"><div><p class="n">Lolita Fries</p></div><span class="p">11 ₾</span></div>
+      <div class="mi"><div><p class="n">Lolita Cheese Fries</p></div><span class="p">13 ₾</span></div>
+      <div class="mi"><div><p class="n">Nachos</p><p class="d">Cheese Sauce, Guacamole, Tomato Salsa</p></div><span class="p">19 ₾</span></div>
+    </div>
+    <div class="cat-block"><div class="cat-h">Sauce</div>
+      <div class="mi"><div><p class="n">Cheese Sauce</p></div><span class="p">6 ₾</span></div>
+      <div class="mi"><div><p class="n">Chimichurri</p></div><span class="p">9 ₾</span></div>
+      <div class="mi"><div><p class="n">Chili Tomato</p></div><span class="p">6 ₾</span></div>
+      <div class="mi"><div><p class="n">Bazhe</p></div><span class="p">9 ₾</span></div>
+    </div>
+  </div>
+
+  <div data-panel="t8" class="tab-panel md:columns-2 md:gap-x-12">
+    <div class="cat-block"><div class="cat-h">Dessert</div>
+      <div class="mi"><div><p class="n">Cookie Mug Cake, Homemade</p></div><span class="p">20 ₾</span></div>
+      <div class="mi"><div><p class="n">Peanut Butter Ice Cream</p></div><span class="p">18 ₾</span></div>
+      <div class="mi"><div><p class="n">Strawberry Roulade</p></div><span class="p">16 ₾</span></div>
+      <div class="mi"><div><p class="n">Tiramisu</p><p class="d">Mascarpone, Espresso, Port Wine</p></div><span class="p">19 ₾</span></div>
+      <div class="mi"><div><p class="n">Apple Crumble, Ice Cream</p></div><span class="p">16 ₾</span></div>
+      <div class="mi"><div><p class="n">Churros, Chocolate</p></div><span class="p">13 ₾</span></div>
+      <div class="mi"><div><p class="n">Éclair</p><p class="d">Vanilla, Chocolate Glaze</p></div><span class="p">9 ₾</span></div>
+      <div class="mi"><div><p class="n">Lemon & Blueberry Tart</p><p class="d">Meringue</p></div><span class="p">13 ₾</span></div>
+      <div class="mi"><div><p class="n">Carrot Cake</p><p class="d">Walnut, Ginger Cream Cheese</p></div><span class="p">14 ₾</span></div>
+    </div>
+  </div>
+
+  <div data-panel="t9" class="tab-panel md:columns-2 md:gap-x-12">
+    <div class="cat-block"><div class="cat-h">Eggs</div>
+      <div class="mi"><div><p class="n">Scrambled Eggs / Omelette / Sunny Side Up</p><p class="d">Provence Bread, Salad</p></div><span class="p">18 ₾</span></div>
+      <div class="mi"><div><p class="n">Eggs Benedict</p><p class="d">Smoked Salmon or Ham, Toasted Bread</p></div><span class="p">23–25 ₾</span></div>
+      <div class="mi"><div><p class="n">Egg Bun with Salmon</p><p class="d">Avocado, Cream Cheese</p></div><span class="p">30 ₾</span></div>
+      <div class="mi"><div><p class="n">Egg Bun with Cheddar</p><p class="d">Caramelized Onions, Cocktail Sauce</p></div><span class="p">23 ₾</span></div>
+      <div class="mi"><div><p class="n">Shakshuka</p><p class="d">Tomatoes, Bell Peppers, Provence Bread</p></div><span class="p">23 ₾</span></div>
+      <div class="mi"><div><p class="n">Avocado Toast, Eggs</p><p class="d">Sunny Side Up, Sesame Seeds</p></div><span class="p">23 ₾</span></div>
+      <div class="mi"><div><p class="n">Kikliko</p><p class="d">French Toast, Ham, Gouda, Dijon Mustard</p></div><span class="p">18 ₾</span></div>
+      <div class="mi"><div><p class="n">Tuna Wrap</p><p class="d">Avocado, Cheddar, Olives, Red Onion</p></div><span class="p">21 ₾</span></div>
+    </div>
+    <div class="cat-block"><div class="cat-h">Sweet & Bowls</div>
+      <div class="mi"><div><p class="n">Pancake</p><p class="d">Chantilly Cream or Nutella, Maple Syrup</p></div><span class="p">21–25 ₾</span></div>
+      <div class="mi"><div><p class="n">Waffle</p><p class="d">Cottage Cheese Cream, Strawberries</p></div><span class="p">18 ₾</span></div>
+      <div class="mi"><div><p class="n">Yogurt</p><p class="d">Matsoni, Granola, Seasonal Fruit, Honey</p></div><span class="p">20 ₾</span></div>
+      <div class="mi"><div><p class="n">Chia Pudding</p><p class="d">Mango, Coconut Milk, Maple Syrup</p></div><span class="p">19 ₾</span></div>
+      <div class="mi"><div><p class="n">Spirulina Bowl</p><p class="d">Mango, Blueberry, Banana, Chia, Almond Milk</p></div><span class="p">23 ₾</span></div>
+      <div class="mi"><div><p class="n">Milkshake</p><p class="d">Salted Caramel or Oreo</p></div><span class="p">16 ₾</span></div>
+      <div class="mi"><div><p class="n">Smoothie</p><p class="d">Coconut & Date or Banana & Date</p></div><span class="p">16 ₾</span></div>
+      <p class="note">დამატება: ავოკადო +6 ₾ · ბეკონი +9 ₾ · შებოლილი ორაგული +13 ₾ · საუზმე გაიცემა 09:00–14:00</p>
+    </div>
+  </div>
+
+  <div data-panel="t10" class="tab-panel md:columns-2 md:gap-x-12">
+    <div class="cat-block"><div class="cat-h">Cocktails · ყველა 25 ₾</div>
+      <div class="mi"><div><p class="n">Tamara's</p><p class="d">Tequila, Triple Sec, Cherry Amarena, Lime</p></div></div>
+      <div class="mi"><div><p class="n">Wabi Sabi</p><p class="d">Fruit Tea Gin, Sweet Vermouth, Walnut, Aloe</p></div></div>
+      <div class="mi"><div><p class="n">Supreme</p><p class="d">Chestnut Tequila, Pear Liqueur, Maple</p></div></div>
+      <div class="mi"><div><p class="n">Southside</p><p class="d">Dry Gin, Mint, Lime, Soda</p></div></div>
+      <div class="mi"><div><p class="n">Needy Girl</p><p class="d">Bourbon, Aperol, Peach, Jasmine Tea</p></div></div>
+      <div class="mi"><div><p class="n">Yuki Fig</p><p class="d">Tequila, Herbal Liqueur, Port Wine, Fig Jam</p></div></div>
+      <div class="mi"><div><p class="n">Blueberry Nights</p><p class="d">Dry Gin, Vodka, Bergamot, Blueberries</p></div></div>
+      <div class="mi"><div><p class="n">Ember Spirit</p><p class="d">Smokey Whiskey, Amaretto, Apple & Cinnamon</p></div></div>
+      <div class="mi"><div><p class="n">Sonic</p><p class="d">Butterfly Tea Gin, Violet Liqueur, Milk Washed</p></div></div>
+    </div>
+  </div>
+
+  <div data-panel="t11" class="tab-panel md:columns-2 md:gap-x-12">
+    <div class="cat-block"><div class="cat-h">ღვინო (ჭიქა / ბოთლი)</div>
+      <div class="mi"><div><p class="n">Okros "Zvari" Rkatsiteli</p><p class="d">Amber Dry</p></div><span class="p">10 / 45 ₾</span></div>
+      <div class="mi"><div><p class="n">Tren de Vida "Movida"</p></div><span class="p">20 / 100 ₾</span></div>
+      <div class="mi"><div><p class="n">Nikalas Budeshuri Saperavi</p><p class="d">Red</p></div><span class="p">17 / 83 ₾</span></div>
+      <div class="mi"><div><p class="n">Denavolo "Catavela"</p></div><span class="p">23 / 112 ₾</span></div>
+      <div class="mi"><div><p class="n">Les Capriades Pet-Nat</p><p class="d">White Sparkling, 0.75 L</p></div><span class="p">79 ₾</span></div>
+      <div class="mi"><div><p class="n">On Tap — Pheasant's Tears Mtsvane / Qvinta</p></div><span class="p">9 / 23 ₾</span></div>
+    </div>
+    <div class="cat-block"><div class="cat-h">ლუდი</div>
+      <div class="mi"><div><p class="n">Black Lion (Half Pint / Draught / IPA / Black)</p></div><span class="p">6–18 ₾</span></div>
+      <div class="mi"><div><p class="n">Svia (Draft / Wit / Belgian Pale Ale)</p></div><span class="p">13–16 ₾</span></div>
+      <div class="mi"><div><p class="n">Zakara Cider (Apple / Cherry)</p></div><span class="p">16–18 ₾</span></div>
+    </div>
+    <div class="cat-block"><div class="cat-h">კრეპკი სასმელები</div>
+      <div class="mi"><div><p class="n">Vodka</p></div><span class="p">13–28 ₾</span></div>
+      <div class="mi"><div><p class="n">Gin</p></div><span class="p">16–25 ₾</span></div>
+      <div class="mi"><div><p class="n">Tequila & Mezcal</p></div><span class="p">18–44 ₾</span></div>
+      <div class="mi"><div><p class="n">Whiskey</p></div><span class="p">16–56 ₾</span></div>
+      <div class="mi"><div><p class="n">Brandy & Cognac</p></div><span class="p">16–108 ₾</span></div>
+      <div class="mi"><div><p class="n">Rum</p></div><span class="p">13–49 ₾</span></div>
+      <div class="mi"><div><p class="n">Chacha</p></div><span class="p">11–13 ₾</span></div>
+      <p class="note">სრული ბრენდების სია ხელმისაწვდომია ბარში</p>
+    </div>
+    <div class="cat-block"><div class="cat-h">უალკოჰოლო და ყავა</div>
+      <div class="mi"><div><p class="n">წყალი / კოკა-კოლა</p></div><span class="p">5–6 ₾</span></div>
+      <div class="mi"><div><p class="n">ლიმონათი (შინაური)</p></div><span class="p">11–13 ₾</span></div>
+      <div class="mi"><div><p class="n">ტონიკი / ჯინჯერ ბირი</p></div><span class="p">9 ₾</span></div>
+      <div class="mi"><div><p class="n">ესპრესო / ამერიკანო</p></div><span class="p">7,5 ₾</span></div>
+      <div class="mi"><div><p class="n">კაპუჩინო / ლატე მაკიატო</p></div><span class="p">10–12 ₾</span></div>
+      <div class="mi"><div><p class="n">მაჩა ლატე</p></div><span class="p">16 ₾</span></div>
+      <div class="mi"><div><p class="n">ჩაი (მწვანე / შავი / მენთა)</p></div><span class="p">9–11 ₾</span></div>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<section id="booking" class="bg-ink text-cream py-24 px-6">
+  <div class="max-w-2xl mx-auto reveal">
+    <div class="text-center mb-10">
+      <span class="text-xs tracking-[0.2em] uppercase text-terracotta font-semibold">ჯავშანი</span>
+      <h2 class="font-display text-4xl md:text-5xl font-semibold mt-3">მაგიდის დაჯავშნა</h2>
+      <p class="text-cream/60 mt-3">დატოვეთ განაცხადი — დაგირეკავთ დასადასტურებლად. სასწრაფო ჯავშნისთვის დარეკეთ პირდაპირ: <a href="tel:+995322020299" class="underline hover:text-terracotta">032 202 02 99</a></p>
+    </div>
+    <form id="bookingForm" class="grid sm:grid-cols-2 gap-4">
+      <input required placeholder="სახელი" class="bg-cream/10 border border-cream/20 rounded-xl px-4 py-3.5 placeholder-cream/40 focus:outline-none focus:ring-2 focus:ring-terracotta transition">
+      <input required type="tel" placeholder="ტელეფონი" class="bg-cream/10 border border-cream/20 rounded-xl px-4 py-3.5 placeholder-cream/40 focus:outline-none focus:ring-2 focus:ring-terracotta transition">
+      <input required type="date" class="bg-cream/10 border border-cream/20 rounded-xl px-4 py-3.5 placeholder-cream/40 focus:outline-none focus:ring-2 focus:ring-terracotta transition [color-scheme:dark]">
+      <input required type="time" class="bg-cream/10 border border-cream/20 rounded-xl px-4 py-3.5 placeholder-cream/40 focus:outline-none focus:ring-2 focus:ring-terracotta transition [color-scheme:dark]">
+      <select required class="bg-cream/10 border border-cream/20 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-terracotta transition sm:col-span-2 [color-scheme:dark]">
+        <option value="">სტუმრების რაოდენობა</option>
+        <option>1–2 სტუმარი</option><option>3–4 სტუმარი</option><option>5–8 სტუმარი</option><option>8-ზე მეტი</option>
+      </select>
+      <textarea placeholder="სურვილები (არასავალდებულო)" rows="3" class="bg-cream/10 border border-cream/20 rounded-xl px-4 py-3.5 placeholder-cream/40 focus:outline-none focus:ring-2 focus:ring-terracotta transition sm:col-span-2"></textarea>
+      <button type="submit" class="sm:col-span-2 bg-terracotta text-cream rounded-xl px-6 py-4 font-medium hover:brightness-110 hover:scale-[1.01] transition-transform">განაცხადის გაგზავნა</button>
+    </form>
+    <div id="bookingSuccess" class="hidden text-center bg-cream/10 border border-cream/20 rounded-2xl p-8 mt-4">
+      <div class="text-3xl mb-2">✓</div>
+      <p class="font-display text-xl">გმადლობთ! განაცხადი მიღებულია.</p>
+      <p class="text-cream/60 text-sm mt-1">დაგიკავშირდებით ჯავშნის დასადასტურებლად.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-3 gap-8 text-sm">
+  <div class="reveal">
+    <h3 class="font-display text-lg font-semibold mb-2">მისამართი</h3>
+    <p class="text-ink/70">თამარ ჩოველიძის ქ. 7, თბილისი</p>
+  </div>
+  <div class="reveal">
+    <h3 class="font-display text-lg font-semibold mb-2">სამუშაო საათები</h3>
+    <p class="text-ink/70">ღიაა ახლა · იხურება 02:00-ზე</p>
+    <p class="text-ink/70 mt-1">თვითგატანა — 21:00 საათამდე</p>
+  </div>
+  <div class="reveal">
+    <h3 class="font-display text-lg font-semibold mb-2">კონტაქტი</h3>
+    <p class="text-ink/70"><a href="tel:+995322020299" class="hover:text-terracotta">032 202 02 99</a></p>
+    <div class="flex gap-4 mt-2">
+      <a href="https://www.instagram.com/lolita.tbilisi/" class="hover:text-terracotta">Instagram</a>
+      <a href="https://www.facebook.com/Lolita.Tbilisi/" class="hover:text-terracotta">Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-line py-8 text-center text-xs text-ink/50">
+  Lolita · თბილისი · 4,2 ★ Google (201) · 9,2 Wolt (500)
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+  function setTab(name){
+    tabs.forEach(t=>t.classList.toggle('bg-ink',t.dataset.tab===name));
+    tabs.forEach(t=>t.classList.toggle('text-cream',t.dataset.tab===name));
+    panels.forEach(p=>p.classList.toggle('active',p.dataset.panel===name));
+  }
+  tabs.forEach(t=>t.addEventListener('click',()=>setTab(t.dataset.tab)));
+  setTab('t1');
+
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); obs.unobserve(e.target);} });
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  document.getElementById('bookingForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    this.classList.add('hidden');
+    document.getElementById('bookingSuccess').classList.remove('hidden');
+  });
+</script>
+
+</body>
+</html>
